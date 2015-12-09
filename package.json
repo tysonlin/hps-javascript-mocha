@@ -1,0 +1,6 @@
+{
+  "name": "coffee-machine",
+  "devDependencies": {
+    "mocha": "^2.3.4"
+  }
+}
