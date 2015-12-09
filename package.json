@@ -2,5 +2,8 @@
   "name": "coffee-machine",
   "devDependencies": {
     "mocha": "^2.3.4"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha"
   }
 }
