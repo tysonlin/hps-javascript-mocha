@@ -4,26 +4,15 @@ describe('Coffee machine - Hiptest publisher sample', function () {
     this.actionwords.sut = require('../src/coffee_machine.js').CoffeeMachine();
   });
 
-  describe('Simple use', function () {
-    function simpleUse (lang, ready_message) {
-      // Well, sometimes, you just get a coffee.
-      // Given I start the coffee machine "<lang>"
-      this.actionwords.iStartTheCoffeeMachine(lang);
-      // When I take a coffee
-      this.actionwords.iTakeACoffee();
-      // Then coffee should be served
-      this.actionwords.coffeeShouldBeServed();
-    }
-
-    it('English', function () {
-      simpleUse.apply(this, ['en', 'Ready']);
-    });
-
-    it('French', function () {
-      simpleUse.apply(this, ['fr', 'Pret']);
-    });
+  it('Simple use', function () {
+    // Well, sometimes, you just get a coffee.
+    // Given the coffee machine is started
+    this.actionwords.theCoffeeMachineIsStarted();
+    // When I take a coffee
+    this.actionwords.iTakeACoffee();
+    // Then coffee should be served
+    this.actionwords.coffeeShouldBeServed();
   });
-
 
   it('Water runs away', function () {
     // Simple scenario showing that after 50 coffees, the "Fill tank" message is displayed but it is still possible to have coffee until the tank is fully empty.
