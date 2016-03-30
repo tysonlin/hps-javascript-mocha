@@ -32,7 +32,7 @@ Run tests
 
 To build the project and run the tests, use the following command:
 
-    mocha test --reporter mocha-junit-reporter
+    mocha test --recursive --reporter mocha-junit-reporter
 
 The SUT implementation can be seen in [``src/coffee_machine.js``](https://github.com/hiptest/hps-javascript-mocha/blob/master/src/coffee_machine.js)
 

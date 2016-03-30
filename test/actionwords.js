@@ -38,26 +38,57 @@ exports.Actionwords = {
   },
 
   iTakeCoffeeNumberCoffees: function (coffee_number) {
+    this.handled = this.handled || [];
+
     while ((coffee_number > 0)) {
       this.iTakeACoffee();
       coffee_number = coffee_number - 1;
+
+      if (this.handled.indexOf('water') >= 0) {
+        this.iFillTheWaterTank();
+      }
+
+      if (this.handled.indexOf('beans') >= 0) {
+        this.iFillTheBeansTank();
+      }
+
+      if (this.handled.indexOf('grounds') >= 0) {
+        this.iEmptyTheCoffeeGrounds();
+      }
     }
   },
+
   theCoffeeMachineIsStarted: function () {
     this.iStartTheCoffeeMachine();
   },
-  fiftyCoffeesHaveBeenTakenWithoutFillingTheTank: function () {
-    this.iTakeCoffeeNumberCoffees(30);
-    this.iFillTheBeansTank();
-    this.iEmptyTheCoffeeGrounds();
-    this.iTakeCoffeeNumberCoffees(20);
-    this.iFillTheBeansTank();
-    this.iEmptyTheCoffeeGrounds();
+
+  iHandleWaterTank: function () {
+    this.handled = this.handled || [];
+    this.handled.push('water');
   },
-  thirtyEightCoffeesAreTakenWithoutFillingBeans: function () {
-    this.iTakeCoffeeNumberCoffees(37);
-    this.iEmptyTheCoffeeGrounds();
-    this.iFillTheWaterTank();
-    this.iTakeACoffee();
+
+  iHandleBeans: function () {
+    this.handled = this.handled || [];
+    this.handled.push('beans');
+  },
+
+  iHandleCoffeeGrounds: function () {
+    this.handled = this.handled || [];
+    this.handled.push('grounds');
+  },
+
+  iHandleEverythingExceptTheWaterTank: function () {
+    this.iHandleCoffeeGrounds();
+    this.iHandleBeans();
+  },
+
+  iHandleEverythingExceptTheBeans: function () {
+    this.iHandleWaterTank();
+    this.iHandleCoffeeGrounds();
+  },
+
+  iHandleEverythingExceptTheGrounds: function () {
+    this.iHandleWaterTank();
+    this.iHandleBeans();
   }
 };
