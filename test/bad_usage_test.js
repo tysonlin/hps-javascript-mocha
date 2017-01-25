@@ -1,4 +1,4 @@
-describe('Weird specs', function () {
+describe('Bad usage', function () {
   beforeEach(function () {
     this.actionwords = Object.create(require('./actionwords.js').Actionwords);
     this.actionwords.sut = require('../src/coffee_machine.js').CoffeeMachine();

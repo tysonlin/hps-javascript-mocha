@@ -2,9 +2,6 @@ describe('Water', function () {
   beforeEach(function () {
     this.actionwords = Object.create(require('../actionwords.js').Actionwords);
     this.actionwords.sut = require('../../src/coffee_machine.js').CoffeeMachine();
-    // As a coffee lover
-    // I have to handle the water tank
-    // So I can have coffee when I need it
     // Given the coffee machine is started
     this.actionwords.theCoffeeMachineIsStarted();
     // And I handle everything except the water tank

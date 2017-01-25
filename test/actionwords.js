@@ -1,7 +1,7 @@
 var assert = require('assert');
 
 exports.Actionwords = {
-  iStartTheCoffeeMachine: function (lang) {
+  iStartTheCoffeeMachineUsingLanguageLang: function (lang) {
     this.sut.start(lang);
   },
 
@@ -59,7 +59,7 @@ exports.Actionwords = {
   },
 
   theCoffeeMachineIsStarted: function () {
-    this.iStartTheCoffeeMachine();
+    this.iStartTheCoffeeMachineUsingLanguageLang();
   },
 
   iHandleWaterTank: function () {
@@ -90,5 +90,23 @@ exports.Actionwords = {
   iHandleEverythingExceptTheGrounds: function () {
     this.iHandleWaterTank();
     this.iHandleBeans();
+  },
+
+  displayedMessageIs: function (__free_text) {
+    this.messageMessageShouldBeDisplayed(__free_text);
+  },
+
+  iSwitchToSettingsMode: function () {
+    this.sut.showSettings();
+  },
+
+  settingsShouldBe: function (__datatable) {
+    var cells, settings = {};
+    __datatable.split("\n").forEach(function(line) {
+      cells = line.split('|');
+      settings[cells[1].trim()] = cells[2].trim();
+    });
+
+    assert.deepEqual(this.sut.getSettings(), settings);
   }
 };
