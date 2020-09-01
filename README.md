@@ -1,6 +1,6 @@
 # hps-javascript-mocha
 
-[![Build Status](https://travis-ci.org/hiptest/hps-javascript-mocha.svg?branch=master)](https://travis-ci.org/hiptest/hps-javascript-mocha)
+[![Build Status](https://travis-ci.com/tysonlin/hps-javascript-mocha.svg?branch=master)](https://travis-ci.com/tysonlin/hps-javascript-mocha)
 
 Hiptest publisher samples with Javascript/Mocha
 
