@@ -5,6 +5,7 @@ describe('Can be configured', function () {
   });
 
   it('Display settings', function () {
+    // Tags: priority:medium
     // Given the coffee machine is started
     this.actionwords.theCoffeeMachineIsStarted();
     // When I switch to settings mode
@@ -14,12 +15,12 @@ describe('Can be configured', function () {
   });
 
   it('Default settings', function () {
+    // Tags: priority:high
     // Given the coffee machine is started
     this.actionwords.theCoffeeMachineIsStarted();
     // When I switch to settings mode
     this.actionwords.iSwitchToSettingsMode();
-    // Then settings should be: "| water hardness | 2      |
-    // | grinder        | medium |"
+    // Then settings should be:
     this.actionwords.settingsShouldBe("| water hardness | 2      |\n| grinder        | medium |");
   });
 });

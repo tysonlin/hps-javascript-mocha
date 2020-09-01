@@ -8,19 +8,21 @@ describe('Grounds', function () {
     this.actionwords.iHandleEverythingExceptTheGrounds();
   });
 
+  it('When the grounds are emptied, message is removed', function () {
+    // Tags: priority:medium
+    // When I take "30" coffees
+    this.actionwords.iTakeCoffeeNumberCoffees(30);
+    // And I empty the coffee grounds
+    this.actionwords.iEmptyTheCoffeeGrounds();
+    // Then message "Ready" should be displayed
+    this.actionwords.messageMessageShouldBeDisplayed("Ready");
+  });
+
   it('Message "Empty grounds" is displayed after 30 coffees are taken', function () {
+    // Tags: priority:high
     // When I take "30" coffees
     this.actionwords.iTakeCoffeeNumberCoffees(30);
     // Then message "Empty grounds" should be displayed
     this.actionwords.messageMessageShouldBeDisplayed("Empty grounds");
-  });
-
-  it('When the grounds are emptied, message is removed', function () {
-    // Given I take "30" coffees
-    this.actionwords.iTakeCoffeeNumberCoffees(30);
-    // When I empty the coffee grounds
-    this.actionwords.iEmptyTheCoffeeGrounds();
-    // Then message "Ready" should be displayed
-    this.actionwords.messageMessageShouldBeDisplayed("Ready");
   });
 });

@@ -6,6 +6,7 @@ describe('Serve coffee', function () {
 
   it('Simple use', function () {
     // Well, sometimes, you just get a coffee.
+    // Tags: priority:high
     // Given the coffee machine is started
     this.actionwords.theCoffeeMachineIsStarted();
     // When I take a coffee
