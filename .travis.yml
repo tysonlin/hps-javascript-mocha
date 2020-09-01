@@ -12,4 +12,4 @@ script:
   - mocha test --recursive --reporter mocha-junit-reporter
 
 after_script:
-  - hiptest-publisher -c mocha.conf--push=test-results.xml --test-run-id=452116
+  - hiptest-publisher -c mocha.conf --push=test-results.xml --test-run-id=452116
